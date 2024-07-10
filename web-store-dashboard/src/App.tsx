@@ -1,14 +1,8 @@
 import React from 'react';
-import Sidebar from './components/Sidebar/Sidebar';
-import CustomerProfile from './components/Customer/Profile';
+import Layout from './components/Layout/Layout';
 
 const App: React.FC = () => {
-  return (
-    <div className='flex'>
-      <Sidebar />
-      <CustomerProfile />
-    </div>
-  );
+  return <Layout />;
 };
 
 export default App;
