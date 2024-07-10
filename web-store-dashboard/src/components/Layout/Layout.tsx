@@ -4,7 +4,7 @@ import MainContent from '../MainContent/MainContent';
 
 const Layout: React.FC = () => {
   return (
-    <div className='flex h-screen bg-gray-100'>
+    <div className='flex h-screen bg-website-background'>
       <Sidebar />
       <MainContent />
     </div>

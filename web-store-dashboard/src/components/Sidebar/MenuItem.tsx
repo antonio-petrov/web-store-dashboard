@@ -19,7 +19,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <li
-      className={`px-4 py-2 ${
+      className={`px-4 py-2 ml-4 mr-4 ${
         isSelected ? 'bg-menu-selected' : 'hover:bg-menu-hover'
       }`}
     >

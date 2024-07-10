@@ -28,8 +28,8 @@ const menuSections = {
 
 const Sidebar = () => {
   return (
-    <div className='w-64 bg-sidebar text-white h-screen flex flex-col rounded-lg m-4'>
-      <div className='p-4 flex items-center space-x-2 border-b border-white'>
+    <div className='w-64 bg-sidebar text-white h-screen flex flex-col rounded-lg m-4 pb-4'>
+      <div className='p-2 flex items-center space-x-2 border-b border-white'>
         <div className=' p-2 '>
           <img src='/images/company-logo.svg' alt='Logo' />
         </div>

@@ -42,7 +42,7 @@ const Profile: React.FC = () => {
       <div className='flex justify-between items-center mb-6'>
         <h1 className='text-2xl font-semibold'>Customer Maintenance</h1>
         <div className='flex space-x-2'>
-          <button className='px-4 py-2 bg-blue-500 text-white rounded'>
+          <button className='px-4 py-2 bg-light-blue-background text-white rounded'>
             Export
           </button>
           <button className='px-4 py-2 bg-blue-600 text-white rounded'>
