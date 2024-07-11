@@ -1,5 +1,7 @@
 A screening test project for front end development, built in react 
 
+# [Demo](https://web-store-dashboard-psi.vercel.app/)
+
 # Requirements
 - Design https://www.figma.com/design/EY3GA4M44oorkkFZadz8z9/Screening-Test-(Copy)?node-id=0-1&t=GMOICaIFeRMMcgnM-0
 - Requirements: [Screening Test Brief.pdf](https://github.com/user-attachments/files/16158859/Screening.Test.Brief.pdf)
