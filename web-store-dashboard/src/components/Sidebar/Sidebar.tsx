@@ -59,7 +59,7 @@ const Sidebar = () => {
   return (
     <>
       <button
-        className='md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-gray-800 text-white'
+        className='fixed top-4 left-4 z-50 p-2 rounded-md bg-gray-800 text-white lg:hidden'
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         {isMobileMenuOpen ? 'Close' : 'Menu'}
@@ -68,10 +68,10 @@ const Sidebar = () => {
       <div
         className={`fixed inset-y-0 left-0 transform ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:relative md:translate-x-0 transition duration-200 ease-in-out w-64 bg-sidebar text-white h-full flex flex-col rounded-lg z-40`}
+        } lg:relative lg:translate-x-0 transition duration-200 ease-in-out w-64 bg-sidebar text-white h-full flex flex-col rounded-lg z-40`}
       >
         <div className='p-2 flex items-center space-x-2 mb-2'>
-          <div className=' p-2 '>
+          <div className='p-2'>
             <img src='/images/company-logo.svg' alt='Logo' />
           </div>
           <span className='font-semibold text-sm'>Waretech</span>
@@ -125,7 +125,7 @@ const Sidebar = () => {
           </ul>
         </nav>
         <button
-          className='md:hidden fixed top-4 left-4 z-40 p-2 rounded-md bg-gray-800 text-white'
+          className='fixed top-4 left-4 z-40 p-2 rounded-md bg-gray-800 text-white lg:hidden'
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? 'Close' : 'Menu'}
@@ -134,7 +134,7 @@ const Sidebar = () => {
 
       {isMobileMenuOpen && (
         <div
-          className='fixed inset-0 bg-black opacity-50 z-30 md:hidden'
+          className='fixed inset-0 bg-black opacity-50 z-30 lg:hidden'
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
       )}
