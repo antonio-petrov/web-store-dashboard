@@ -43,10 +43,10 @@ const ContactDetails: React.FC = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
-      <div className='w-full md:w-1/2 md:pr-4'>
+    <div className='flex flex-wrap pr-4'>
+      <div className='w-full lg:w-1/2 lg:pr-4'>
         <div className='space-y-4'>
-          <h2 className='text-base font-bold mb-4 md:mb-6'>Primary Details</h2>
+          <h2 className='text-base font-bold mb-4 lg:mb-6'>Primary Details</h2>
           <LabelInput
             label='Customer Name'
             value={customerData.NAME}
@@ -70,8 +70,8 @@ const ContactDetails: React.FC = () => {
           />
         </div>
 
-        <div className='space-y-4 mt-4 md:mt-8'>
-          <h2 className='text-base font-bold mb-4 md:mb-6'>Contact Details</h2>
+        <div className='space-y-4 mt-4 lg:mt-8'>
+          <h2 className='text-base font-bold mb-4 lg:mb-6'>Contact Details</h2>
           <LabelInput
             label='Contact Number'
             value={customerData.PHONE}
@@ -84,8 +84,8 @@ const ContactDetails: React.FC = () => {
           />
         </div>
 
-        <div className='space-y-4 mt-4 md:mt-8'>
-          <h2 className='text-base font-bold mb-4 md:mb-6'>Customer Address</h2>
+        <div className='space-y-4 mt-4 lg:mt-8'>
+          <h2 className='text-base font-bold mb-4 lg:mb-6'>Customer Address</h2>
           <LabelInput
             label='Address'
             value={customerData.ADDRESS.join(', ')}
@@ -100,8 +100,8 @@ const ContactDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className='w-full md:w-1/2 md:pl-4 flex flex-col items-center'>
-        <div className='flex border-dashed border-2 px-4 py-4 mb-4 md:mb-11.25 w-full justify-center'>
+      <div className='w-full lg:w-1/2 lg:pl-4 flex flex-col items-center'>
+        <div className='flex border-dashed border-2 px-4 py-4 mb-4 lg:mb-11.25 w-full justify-center'>
           <img
             src='/images/renewa-logo.png'
             alt='logo'

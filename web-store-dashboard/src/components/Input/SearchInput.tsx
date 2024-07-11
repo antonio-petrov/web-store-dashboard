@@ -5,7 +5,7 @@ interface SearchInputProps {
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({ className = '' }) => {
-  const combinedClassName = `border rounded px-3 py-2 rounded-lg pl-10 ${className}`;
+  const combinedClassName = `border rounded px-3 py-2 pl-10 ${className}`;
 
   return (
     <div
