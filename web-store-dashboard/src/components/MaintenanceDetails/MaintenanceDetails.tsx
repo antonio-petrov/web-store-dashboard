@@ -1,15 +1,13 @@
-// MaintenanceDetails Component
-import React from 'react';
 import CustomerProfile from '../CustomerProfile/CustomerProfile';
 import SearchInput from '../Input/SearchInput';
 
 const MaintenanceDetails: React.FC = () => {
   return (
     <div className='flex-grow flex flex-col h-full'>
-      <div className='flex flex-col md:flex-row md:space-x-5 mb-8'>
-        <SearchInput className='border rounded px-3 py-2 rounded-lg flex-grow mb-2 md:mb-0' />
-        <div className='flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2'>
-          <button className='w-full md:w-auto px-4 py-2 bg-light-blue-background text-blue-text rounded flex items-center justify-center'>
+      <div className='flex flex-col md:flex-row md:space-x-5 mb-8 pl-12 pr-12 md:pl-0 md:pr-0'>
+        <SearchInput className='border border-gray-300 rounded-lg px-3 py-2 flex-grow mb-2 md:mb-0' />
+        <div className='flex flex-row space-x-2 mb-2 md:mb-0 justify-between'>
+          <button className='px-4 py-2 bg-light-blue-background text-blue-text rounded flex items-center '>
             <svg
               className='w-4 h-4 mr-2'
               fill='currentColor'
@@ -24,7 +22,7 @@ const MaintenanceDetails: React.FC = () => {
             </svg>
             Export
           </button>
-          <button className='w-full md:w-auto px-4 py-2 bg-blue-600 text-white rounded flex items-center justify-center'>
+          <button className='px-4 py-2 bg-blue-600 text-white rounded flex items-center'>
             <svg
               className='w-4 h-4 mr-2'
               fill='currentColor'

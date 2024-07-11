@@ -43,7 +43,7 @@ const ContactDetails: React.FC = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap pr-4'>
       <div className='w-full md:w-1/2 md:pr-4'>
         <div className='space-y-4'>
           <h2 className='text-base font-bold mb-4 md:mb-6'>Primary Details</h2>

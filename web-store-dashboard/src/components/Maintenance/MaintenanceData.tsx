@@ -39,19 +39,27 @@ const MaintenanceData: React.FC = () => {
 
   return (
     <div className='bg-white pt-4.25 md:p-6.75'>
-      <LogoHeader
-        logoSrc='/images/waretech-logo.png'
-        companyName='Waretech'
-        companySubText='HDM Solar'
-      />
-      <hr className='border-t border-light-grey-4 lg:-ml-7 lg:-mr-7 mt-4.5' />
-      <h2 className='text-base font-semibold mt-1.5'>Maintenance Breakdown</h2>
-      <p className='text-sm text-light-grey-2 mb-9.5'>
-        Add, Edit, Delete any of your Entities
-      </p>
-      {stats.map((stat, index) => (
-        <StatsCard key={index} {...stat} />
-      ))}
+      <div className='px-4 md:px-0'>
+        {' '}
+        <LogoHeader
+          logoSrc='/images/waretech-logo.png'
+          companyName='Waretech'
+          companySubText='HDM Solar'
+        />
+        <hr className='border-t border-light-grey-4 lg:-ml-7 lg:-mr-7 mt-4.5' />
+        <h2 className='text-base font-semibold mt-1.5'>
+          Maintenance Breakdown
+        </h2>
+        <p className='text-sm text-light-grey-2 mb-9.5'>
+          Add, Edit, Delete any of your Entities
+        </p>
+      </div>
+      <div className='px-4 md:px-0'>
+        {' '}
+        {stats.map((stat, index) => (
+          <StatsCard key={index} {...stat} />
+        ))}
+      </div>
       <ConversionHistory data={conversionHistoryData} />
     </div>
   );
