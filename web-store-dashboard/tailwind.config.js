@@ -35,6 +35,7 @@ module.exports = {
         '9.25': '37px',
         '9.5': '38px',
         '9.75': '39px',
+        '11.25': '45px',
       },
       colors: {
         'website-background': '#D9D9D9',
@@ -54,11 +55,13 @@ module.exports = {
         'blue-text': '#3A5BFF',
         'dark-grey-1': '#383E49',
         'dark-grey-2': '#1C1D21',
+        'dark-grey-3': '#5D6679',
         'light-grey-1': '#667085',
         'light-grey-2': '#8181A5',
         'light-grey-3': '#F6F6F6',
         'light-grey-4': '#F0F0F3',
         'light-grey-5': '#48505E',
+        'light-grey-6': '#D1D5DC',
       },
       fontFamily: {
         'sans': ['Lato', 'sans-serif'],

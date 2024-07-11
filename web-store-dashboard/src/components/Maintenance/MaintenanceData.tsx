@@ -1,4 +1,3 @@
-// MaintenanceData.tsx
 import React from 'react';
 import LogoHeader from '../LogoHeader/LogoHeader';
 import StatsCard from '../StatsCard/StatsCard';
@@ -39,13 +38,13 @@ const MaintenanceData: React.FC = () => {
   const conversionHistoryData = [40, 30, 60, 20, 70, 50, 45, 55, 60, 20];
 
   return (
-    <div className='bg-white pt-4.25 p-6.75'>
+    <div className='bg-white pt-4.25 md:p-6.75'>
       <LogoHeader
         logoSrc='/images/waretech-logo.png'
         companyName='Waretech'
         companySubText='HDM Solar'
       />
-      <hr className='border-t border-light-grey-4 -ml-7 -mr-7 mt-4.5' />
+      <hr className='border-t border-light-grey-4 lg:-ml-7 lg:-mr-7 mt-4.5' />
       <h2 className='text-base font-semibold mt-1.5'>Maintenance Breakdown</h2>
       <p className='text-sm text-light-grey-2 mb-9.5'>
         Add, Edit, Delete any of your Entities

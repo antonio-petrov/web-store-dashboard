@@ -47,6 +47,7 @@ const Sidebar = () => {
   const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({
     Dashboards: true,
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleDropdown = (title: string) => {
     setExpandedMenus((prevState) => ({
@@ -56,62 +57,88 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='w-64 bg-sidebar text-white h-screen flex flex-col rounded-lg m-4 pb-4'>
-      <div className='p-2 flex items-center space-x-2 mb-2'>
-        <div className=' p-2 '>
-          <img src='/images/company-logo.svg' alt='Logo' />
+    <>
+      <button
+        className='md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-gray-800 text-white'
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        {isMobileMenuOpen ? 'Close' : 'Menu'}
+      </button>
+
+      <div
+        className={`fixed inset-y-0 left-0 transform ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:relative md:translate-x-0 transition duration-200 ease-in-out w-64 bg-sidebar text-white h-full flex flex-col rounded-lg z-40`}
+      >
+        <div className='p-2 flex items-center space-x-2 mb-2'>
+          <div className=' p-2 '>
+            <img src='/images/company-logo.svg' alt='Logo' />
+          </div>
+          <span className='font-semibold text-sm'>Waretech</span>
         </div>
-        <span className='font-semibold text-sm'>Waretech</span>
+        <hr className='ml-4 mr-4' />
+        <UserProfile />
+        <hr className='ml-4 mr-4' />
+        <nav className='flex-grow'>
+          <ul className='py-4'>
+            {menuSections.main.map((item) => (
+              <MenuItem
+                key={item.title}
+                title={item.title}
+                imgSrc={item.icon}
+                isSelected={item.isSelected}
+                isDropdown={item.isDropdown}
+                onClick={() => item.isDropdown && toggleDropdown(item.title)}
+                expanded={expandedMenus[item.title] ?? false}
+              />
+            ))}
+          </ul>
+          <h3 className='text-sm font-semibold uppercase text-white mb-2 ml-4'>
+            Pages
+          </h3>
+          <ul>
+            {menuSections.pages.map((item) => (
+              <MenuItem
+                key={item.title}
+                title={item.title}
+                imgSrc={item.icon}
+                isDropdown={item.isDropdown}
+                onClick={() => item.isDropdown && toggleDropdown(item.title)}
+                expanded={expandedMenus[item.title] ?? false}
+              />
+            ))}
+          </ul>
+          <h3 className='text-sm font-semibold uppercase text-white mb-2 ml-4'>
+            Quick Links
+          </h3>
+          <ul>
+            {menuSections.quickLinks.map((item) => (
+              <MenuItem
+                key={item.title}
+                title={item.title}
+                imgSrc={item.icon}
+                isDropdown={item.isDropdown}
+                onClick={() => item.isDropdown && toggleDropdown(item.title)}
+                expanded={expandedMenus[item.title] ?? false}
+              />
+            ))}
+          </ul>
+        </nav>
+        <button
+          className='md:hidden fixed top-4 left-4 z-40 p-2 rounded-md bg-gray-800 text-white'
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? 'Close' : 'Menu'}
+        </button>
       </div>
-      <hr className='ml-4 mr-4' />
-      <UserProfile />
-      <hr className='ml-4 mr-4' />
-      <nav className='flex-grow'>
-        <ul className='py-4'>
-          {menuSections.main.map((item) => (
-            <MenuItem
-              key={item.title}
-              title={item.title}
-              imgSrc={item.icon}
-              isSelected={item.isSelected}
-              isDropdown={item.isDropdown}
-              onClick={() => item.isDropdown && toggleDropdown(item.title)}
-              expanded={expandedMenus[item.title] ?? false}
-            />
-          ))}
-        </ul>
-        <h3 className='text-sm font-semibold uppercase text-white mb-2 ml-4'>
-          Pages
-        </h3>
-        <ul>
-          {menuSections.pages.map((item) => (
-            <MenuItem
-              key={item.title}
-              title={item.title}
-              imgSrc={item.icon}
-              isDropdown={item.isDropdown}
-              onClick={() => item.isDropdown && toggleDropdown(item.title)}
-              expanded={expandedMenus[item.title] ?? false}
-            />
-          ))}
-        </ul>
-        <h3 className='text-sm font-semibold uppercase text-white mb-2 ml-4'>
-          Quick Links
-        </h3>
-        <ul>
-          {menuSections.quickLinks.map((item) => (
-            <MenuItem
-              key={item.title}
-              title={item.title}
-              imgSrc={item.icon}
-              isDropdown={item.isDropdown}
-              onClick={() => item.isDropdown && toggleDropdown(item.title)}
-              expanded={expandedMenus[item.title] ?? false}
-            />
-          ))}
-        </ul>
-      </nav>
-    </div>
+
+      {isMobileMenuOpen && (
+        <div
+          className='fixed inset-0 bg-black opacity-50 z-30 md:hidden'
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
+    </>
   );
 };
 
