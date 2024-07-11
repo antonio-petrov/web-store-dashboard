@@ -20,10 +20,14 @@ const ContactDetails: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const apiUrl = process.env.REACT_APP_API_URL;
+      if (!apiUrl) {
+        console.error('API URL is not defined');
+        return;
+      }
+
       try {
-        const response = await axios.get(
-          process.env.REACT_APP_API_URL as string
-        );
+        const response = await axios.get(apiUrl as string);
         const data = response.data.ReactCustomer[0];
         setCustomerData(data);
       } catch (error) {
