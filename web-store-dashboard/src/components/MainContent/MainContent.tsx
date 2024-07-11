@@ -19,11 +19,15 @@ const MainContent: React.FC = () => {
       </div>
       <div className='container pl-1'>
         <PageTitle title='Customer Maintenance' />
-        <div className='grid grid-cols-3 gap-6'>
+        <div className='flex gap-6'>
           {/* TODO: This will probably need to be changed for other pages? Can't take such decision without seeing other screens. */}
-          <MaintenanceData />
+          <div className='w-1/4'>
+            <MaintenanceData />
+          </div>
           {/* TODO: Consider having a separate component for the data below - depending on the other screens from the app */}
-          <MaintenanceDetails />
+          <div className='w-3/4'>
+            <MaintenanceDetails />
+          </div>
         </div>
       </div>
     </div>

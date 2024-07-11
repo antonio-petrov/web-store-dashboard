@@ -3,7 +3,7 @@ import SearchInput from '../Input/SearchInput';
 
 const MaintenanceDetails: React.FC = () => {
   return (
-    <div className='col-span-2'>
+    <div>
       <div className='flex space-x-2 space-x-5 mb-8'>
         <SearchInput className='border rounded px-3 py-2 rounded-lg flex-grow max-w-2xl' />
         <button className='px-4 py-2 bg-light-blue-background text-blue-text rounded flex items-center'>
@@ -37,7 +37,7 @@ const MaintenanceDetails: React.FC = () => {
           Add New
         </button>
       </div>
-      <div className='col-span-2 bg-white rounded-lg p-4'>
+      <div className='col-span-2 bg-white rounded-lg pl-4 pt-3.25'>
         <CustomerProfile />
       </div>
     </div>

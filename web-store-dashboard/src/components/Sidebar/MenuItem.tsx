@@ -20,24 +20,22 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <li
       className={`px-4 py-2 ml-4 mr-4 ${
-        isSelected ? 'bg-menu-selected' : 'hover:bg-menu-hover'
+        isSelected
+          ? isDropdown
+            ? 'bg-menu-dropdown-selected'
+            : 'bg-menu-selected'
+          : 'hover:bg-menu-hover'
       }`}
     >
       <a href='#' className='flex items-center'>
         {imgSrc && <img src={imgSrc} alt={altText} className='w-5 h-5 mr-3' />}
         {title}
         {isDropdown && (
-          <svg
-            className='ml-auto w-4 h-4'
-            fill='currentColor'
-            viewBox='0 0 20 20'
-          >
-            <path
-              fillRule='evenodd'
-              d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
-              clipRule='evenodd'
-            />
-          </svg>
+          <img
+            src={isSelected ? '/icons/arrow-up.svg' : '/icons/arrow-down.svg'}
+            alt={isSelected ? 'arrow-up-icon' : 'arrow-down-icon'}
+            className='w-3 h-3 ml-auto'
+          />
         )}
       </a>
     </li>
