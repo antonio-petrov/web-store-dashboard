@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuItem from './MenuItem';
+import UserProfile from '../UserProfile/UserProfile';
 
-const menuSections = {
+interface MenuSection {
+  title: string;
+  icon: string;
+  isDropdown?: boolean;
+  isSelected?: boolean;
+  expanded?: boolean;
+  subItems?: MenuSection[];
+}
+
+const menuSections: Record<string, MenuSection[]> = {
   main: [
     {
       title: 'Dashboards',
       icon: 'icons/active-menu.svg',
       isDropdown: true,
       isSelected: true,
+      expanded: true,
+      subItems: [{ title: 'Test', icon: 'icons/test-icon.svg' }],
     },
     {
       title: 'Maintenance Menu',
@@ -32,30 +44,27 @@ const menuSections = {
 };
 
 const Sidebar = () => {
+  const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({
+    Dashboards: true,
+  });
+
+  const toggleDropdown = (title: string) => {
+    setExpandedMenus((prevState) => ({
+      ...prevState,
+      [title]: !prevState[title],
+    }));
+  };
+
   return (
     <div className='w-64 bg-sidebar text-white h-screen flex flex-col rounded-lg m-4 pb-4'>
-      <div className='p-2 flex items-center space-x-2'>
+      <div className='p-2 flex items-center space-x-2 mb-2'>
         <div className=' p-2 '>
           <img src='/images/company-logo.svg' alt='Logo' />
         </div>
-        <span className='font-semibold text-lg'>Waretech</span>
+        <span className='font-semibold text-sm'>Waretech</span>
       </div>
       <hr className='ml-4 mr-4' />
-      <div className='p-4 flex items-center space-x-2'>
-        <img
-          src='images/profile-pic.png'
-          alt='User'
-          className='ml-3.75 rounded-full w-8.25 h-8.25'
-        />
-        <span className='font-light text-base font-roboto'>
-          Tayah Betambeau
-        </span>
-        <img
-          className='cursor-pointer'
-          src='icons/arrow-down.svg'
-          alt='arrow down icon'
-        />
-      </div>
+      <UserProfile />
       <hr className='ml-4 mr-4' />
       <nav className='flex-grow'>
         <ul className='py-4'>
@@ -66,6 +75,8 @@ const Sidebar = () => {
               imgSrc={item.icon}
               isSelected={item.isSelected}
               isDropdown={item.isDropdown}
+              onClick={() => item.isDropdown && toggleDropdown(item.title)}
+              expanded={expandedMenus[item.title] ?? false}
             />
           ))}
         </ul>
@@ -79,6 +90,8 @@ const Sidebar = () => {
               title={item.title}
               imgSrc={item.icon}
               isDropdown={item.isDropdown}
+              onClick={() => item.isDropdown && toggleDropdown(item.title)}
+              expanded={expandedMenus[item.title] ?? false}
             />
           ))}
         </ul>
@@ -92,6 +105,8 @@ const Sidebar = () => {
               title={item.title}
               imgSrc={item.icon}
               isDropdown={item.isDropdown}
+              onClick={() => item.isDropdown && toggleDropdown(item.title)}
+              expanded={expandedMenus[item.title] ?? false}
             />
           ))}
         </ul>

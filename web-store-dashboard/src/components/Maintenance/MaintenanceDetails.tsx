@@ -5,7 +5,7 @@ const MaintenanceDetails: React.FC = () => {
   return (
     <div>
       <div className='flex space-x-2 space-x-5 mb-8'>
-        <SearchInput className='border rounded px-3 py-2 rounded-lg flex-grow max-w-2xl' />
+        <SearchInput className='border rounded px-3 py-2 rounded-lg flex-grow' />
         <button className='px-4 py-2 bg-light-blue-background text-blue-text rounded flex items-center'>
           <svg
             className='w-4 h-4 mr-2'

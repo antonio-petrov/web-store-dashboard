@@ -3,14 +3,20 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      maxWidth: {
+        '3.25xl': '50rem',
+        '3.5xl': '52rem',
+      },
       spacing: {
         '0.25': '1px',
         '0.75': '3px',
         '1.25': '5px',
+        '1.5': '6px',
         '1.75': '7px',
         '2.25': '9px',
         '2.75': '11px',
         '3.25': '13px',
+        '3.5': '14px',
         '3.75': '15px',
         '4.25': '17px',
         '4.5': '18px',
@@ -19,12 +25,15 @@ module.exports = {
         '5.5': '22px',
         '5.75': '23px',
         '6.25': '25px',
+        '6.5': '26px',
         '6.75': '27px',
         '7.25': '29px',
+        '7.5': '30px',
         '7.75': '31px',
         '8.25': '33px',
         '8.75': '35px',
         '9.25': '37px',
+        '9.5': '38px',
         '9.75': '39px',
       },
       colors: {
@@ -48,6 +57,8 @@ module.exports = {
         'light-grey-1': '#667085',
         'light-grey-2': '#8181A5',
         'light-grey-3': '#F6F6F6',
+        'light-grey-4': '#F0F0F3',
+        'light-grey-5': '#48505E',
       },
       fontFamily: {
         'sans': ['Lato', 'sans-serif'],

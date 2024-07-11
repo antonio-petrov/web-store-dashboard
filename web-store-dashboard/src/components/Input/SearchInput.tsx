@@ -9,7 +9,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ className = '' }) => {
 
   return (
     <div
-      className='search-input-container flex-grow max-w-2xl'
+      className='search-input-container flex-grow max-w-3.25xl'
       style={{ position: 'relative', display: 'flex', alignItems: 'center' }}
     >
       <img
