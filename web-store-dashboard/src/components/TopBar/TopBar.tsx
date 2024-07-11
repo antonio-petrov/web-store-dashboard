@@ -8,11 +8,7 @@ const TopBar: React.FC = () => {
       />
       <button className='p-1 rounded-full'>
         {' '}
-        <img
-          src='/icons/customer.svg'
-          alt='person-icon'
-          className='w-5 h-5 mr-3'
-        />
+        <img src='/icons/customer.svg' alt='person-icon' className='w-5 h-5' />
       </button>
       <button className='p-1 rounded-full'>
         {' '}
