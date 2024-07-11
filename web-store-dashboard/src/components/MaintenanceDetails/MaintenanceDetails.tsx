@@ -1,9 +1,10 @@
+import React from 'react';
 import CustomerProfile from '../CustomerProfile/CustomerProfile';
 import SearchInput from '../Input/SearchInput';
 
 const MaintenanceDetails: React.FC = () => {
   return (
-    <div className='flex-grow flex flex-col h-full'>
+    <div className='flex-grow flex flex-col h-full overflow-y-auto'>
       <div className='flex flex-col md:flex-row md:space-x-5 mb-8 pl-12 pr-12 md:pl-0 md:pr-0'>
         <SearchInput className='border border-gray-300 rounded-lg px-3 py-2 flex-grow mb-2 md:mb-0' />
         <div className='flex flex-row space-x-2 mb-2 md:mb-0 justify-between'>
@@ -39,7 +40,7 @@ const MaintenanceDetails: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className='flex-grow bg-white rounded-lg pl-4 pt-3.25'>
+      <div className='flex-grow bg-white rounded-lg pl-4 pt-3.25 overflow-y-auto'>
         <CustomerProfile />
       </div>
     </div>

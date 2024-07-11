@@ -13,7 +13,7 @@ const CustomerProfile = () => {
         <h2 className='text-xl font-bold mb-4 md:mb-8 text-dark-grey-1'>
           Renewa Ltd
         </h2>
-        <div className='flex flex-col md:flex-row font-inter text-light-grey-1 mb-4 md:mb-7 pl-1 border-b-2'>
+        <div className='flex flex-col md:flex-row lg:flex-row font-inter text-light-grey-1 mb-4 md:mb-7 lg:mb-7 pl-1 border-b-2'>
           {tabs.map((tab) => (
             <Tab
               key={tab}
@@ -25,7 +25,7 @@ const CustomerProfile = () => {
         </div>
       </div>
 
-      <div className='pl-4 md:pl-6.75'>
+      <div className='pl-4 md:pl-6.75 lg:pl-6.75'>
         <ContactDetails />
       </div>
     </div>
